@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>デジタル時計 + アラーム</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1e1e2f;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .clock-container {
+            text-align: center;
+            background: #2d2d44;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .clock {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+
+        .alarm-area {
+            margin-top: 20px;
+        }
+
+        input[type="time"] {
+            padding: 8px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ffd700;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock-container">
+        <div class="clock" id="clock">
+            00:00:00
+        </div>
+
+        <div class="alarm-area">
+            <input type="time" id="alarmTime" />
+            <button id="setAlarmButton">アラーム設定</button>
+        </div>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
