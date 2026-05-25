@@ -1,0 +1,69 @@
+.wrap {
+  text-align: center;
+
+  & .button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 8px;
+    background-color: rgb(240, 255, 250);
+    box-shadow: -4px 4px 10px gray;
+    position: relative;
+    transition: box-shadow 0s linear 0s;
+
+    &::after {
+      content: "on";
+      color: rgb(186, 0, 0);
+      font-size: 20px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      opacity: 0;
+      transform: translate(0, 0);
+      transition:
+        top 0.2s linear 0s,
+        right 0.2s linear 0s,
+        opacity 0.2s linear 0s,
+        transform 0.2s linear 0s;
+    }
+
+    &::before {
+      content: "off";
+      color: rgb(0, 97, 189);
+      font-size: 20px;
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      opacity: 1;
+      transform: translate(0, 0);
+      transition:
+        top 0.2s linear 0s,
+        right 0.2s linear 0s,
+        opacity 0.2s linear 0s,
+        transform 0.2s linear 0s;
+    }
+  }
+
+  & .button:active {
+    box-shadow: -2px 2px 6px gray;
+    transform: translate(-3px, 3px);
+
+    &::after {
+      opacity: 1;
+      top: 85px;
+      right: 85px;
+      transform: translate(100%, -100%);
+    }
+    &::before {
+      opacity: 0;
+      top: 85px;
+      right: 85px;
+      transform: translate(100%, -100%);
+    }
+  }
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+}

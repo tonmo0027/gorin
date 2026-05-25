@@ -1,0 +1,161 @@
+& .main1 {
+  --box-size: 200px;
+  --ball-size: 30px;
+  --move-range: calc(var(--box-size) - var(--ball-size));
+  position: relative;
+  border: 1px solid black;
+  width: var(--box-size);
+  height: var(--box-size);
+
+  & .child {
+    position: absolute;
+    top: 0;
+    border: 1px solid green;
+    background-color: aquamarine;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: 50%;
+    animation: anime_main1 2s linear 0s infinite;
+  }
+}
+
+p:nth-of-type(2) {
+  padding-top: 30px;
+}
+
+.main2 {
+  --box-size: 200px;
+  --ball-size: 30px;
+  --move-range: calc(var(--box-size) - var(--ball-size));
+  position: relative;
+  border: 1px solid black;
+  width: var(--box-size);
+  height: var(--box-size);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    border: 1px solid green;
+    background-color: aquamarine;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: 50%;
+    offset-path: path(
+      /* Mは初期位置座標、Lは移動先。M｜L 〇 〇 でワンセット。つまり下記は9回移動する */
+      "M15 15 L105 105 L185 15 L105 105 L185 185 L105 105 L15 185 L105 105 L15 15"
+    );
+    animation: anime_main2 2s linear 0s infinite;
+  }
+}
+
+@keyframes anime_main1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(var(--move-range), 0);
+  }
+  50% {
+    transform: translate(var(--move-range), var(--move-range));
+  }
+  75% {
+    transform: translate(0, var(--move-range));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+/* @keyframes anime_main1 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+} */
+
+/* @keyframes anime_main1 {
+  0% {
+    inset: 0 0 0 0;
+  }
+  25% {
+    inset: 0 0 0 100%;
+    transform: translateX(-100%);
+  }
+  50% {
+    inset: 100% 0 0 100%;
+    transform: translateX(-100%) translateY(-100%);
+  }
+  75% {
+    inset: 100% 100% 0 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    inset: 0 0 0 0;
+  }
+} */
+
+@keyframes anime_main2 {
+  to {
+    offset-distance: 100%;
+  }
+}
+/* @keyframes anime_main2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12.5% {
+    transform: translate(
+      calc(var(--move-range) / 2),
+      calc(var(--move-range) / 2)
+    );
+  }
+  25% {
+    transform: translate(var(--move-range), 0);
+  }
+  37.5% {
+    transform: translate(
+      calc(var(--move-range) / 2),
+      calc(var(--move-range) / 2)
+    );
+  }
+  50% {
+    transform: translate(var(--move-range), var(--move-range));
+  }
+  62.5% {
+    transform: translate(
+      calc(var(--move-range) / 2),
+      calc(var(--move-range) / 2)
+    );
+  }
+  75% {
+    transform: translate(0, var(--move-range));
+  }
+  87.5% {
+    transform: translate(
+      calc(var(--move-range) / 2),
+      calc(var(--move-range) / 2)
+    );
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+} */

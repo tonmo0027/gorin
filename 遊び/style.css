@@ -1,0 +1,30 @@
+div {
+    
+}
+
+canvas {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: animeTriangle 3s linear 0s infinite;
+}
+.canvas0 {
+    border: 1px solid rgb(255, 0, 0);
+    animation: animeTriangle 3s linear 0s infinite;
+}
+.canvas1 {
+    border: 1px solid rgb(68, 0, 255);
+    animation: animeTriangle 3s linear .3s infinite;
+}
+
+@keyframes animeTriangle {
+    0% {
+        transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+    }
+    100%{
+        transform: translateX(-50%) translateY(-50%) rotateY(360deg);
+    }
+}

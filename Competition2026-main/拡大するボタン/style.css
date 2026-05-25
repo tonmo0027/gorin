@@ -1,0 +1,24 @@
+.wrap {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  & .btn {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    transition: scale 0.1s linear 0s;
+  }
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+
+  & input[type="checkbox"]:checked + .btn {
+    scale: 1.1;
+  }
+}

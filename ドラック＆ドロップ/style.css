@@ -1,0 +1,11 @@
+body {
+    margin: 0
+}
+.box {
+    /* position: absolute; */
+    width: 100px;
+    height: 100px;
+    background-color: rgb(18, 170, 38);
+    border-radius: 5px;
+    translate:0 0;
+}

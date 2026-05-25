@@ -1,0 +1,17 @@
+.wrap {
+  & .link {
+    text-decoration: none;
+  }
+
+  & span {
+    display: block;
+    height: 1px;
+    width: 0px;
+    background-color: blue;
+    transition: width 0.1s linear 0s;
+  }
+
+  & .link:hover + span {
+    width: 164px;
+  }
+}

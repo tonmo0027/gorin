@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        const $body = document.querySelector("body")
+        window.addEventListener("mousemove", (e) => {
+            g =  255/window.innerWidth * e.clientX
+            rb = 255/window.innerHeight * e.clientY
+            $body.style.backgroundColor = `rgb(${rb}, ${g}, ${rb})`
+        })
+    </script>
+</body>
+</html>

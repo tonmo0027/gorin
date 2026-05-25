@@ -1,0 +1,48 @@
+body {
+  text-align: center;
+
+  & .button {
+    --button-width: 260px;
+    --button-height: 120px;
+    --toggle-size-minus: calc(7px * 2);
+    --toggle-size: calc(var(--button-height) - var(--toggle-size-minus));
+    --animation-duration: 0.2s;
+
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    margin-top: 50px;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: calc(var(--button-height) / 2);
+    background-color: rgb(235, 235, 235);
+    position: relative;
+    transition: background-color var(--animation-duration) linear 0s;
+
+    &::before {
+      content: "";
+      display: block;
+      width: var(--toggle-size);
+      height: var(--toggle-size);
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      margin: calc(var(--toggle-size-minus) / 2);
+      left: 0;
+      transition: left var(--animation-duration) ease-in-out 0s;
+    }
+  }
+
+  & input[type="checkbox"] {
+    display: none;
+
+    &:checked + .button {
+      background-color: rgb(84 159 255);
+
+      &::before {
+        left: calc(
+          var(--button-width) - var(--toggle-size) - var(--toggle-size-minus)
+        );
+      }
+    }
+  }
+}

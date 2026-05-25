@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>3 止めたり再開したり</title>
+    <link rel="icon" href="data:,">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <input type="button" value="再生" onclick="start()">
+    <input type="button" value="停止" onclick="stop()">
+    <input type="button" value="一時停止" onclick="pause()">
+    <input type="button" value="再開" onclick="resume()">
+</body>
+</html>
+
+<script>
+const text = "aaaaaaaaa"
+let voices = []
+speechSynthesis.onvoiceschanged = e => {
+    voices = speechSynthesis.getVoices()
+}
+
+const start = () => {
+    const uttr = new SpeechSynthesisUtterance(text)
+    console.log(uttr)
+    uttr.voice = voices[0]
+    speechSynthesis.speak(uttr)
+}
+const stop = () => {
+    speechSynthesis.cancel()
+}
+const pause = () => {
+    speechSynthesis.pause()
+}
+const resume = () => {
+    speechSynthesis.resume()
+}
+</script>
