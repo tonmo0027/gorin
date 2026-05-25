@@ -1,5 +1,5 @@
 div {
-    
+
 }
 
 canvas {
@@ -9,38 +9,38 @@ canvas {
     transform: translateX(-50%) translateY(-50%);
     transform-style: preserve-3d;
     perspective: 1000px;
+    transform-origin: 50% 8%;
 }
 
 .canvas0 {
-    animation: animeTriangleRotateY, animeTriangleRotateZ 3s linear .1s infinite;
-    /* animation: animeTriangleRotateZ 3s linear .1s infinite; */
+    animation: animeTriangle 3s linear 0s infinite;
 }
 .canvas1 {
-    animation: animeTriangleRotateZ 3s linear .1s infinite;
+    animation: animeTriangle 3s linear .1s infinite;
 }
 .canvas2 {
-    animation: animeTriangleRotateZ 3s linear .2s infinite;
+    animation: animeTriangle 3s linear .2s infinite;
 }
 .canvas3 {
-    animation: animeTriangleRotateZ 3s linear .3s infinite;
+    animation: animeTriangle 3s linear .3s infinite;
 }
 .canvas4 {
-    animation: animeTriangleRotateZ 3s linear .4s infinite;
+    animation: animeTriangle 3s linear .4s infinite;
 }
 .canvas5 {
-    animation: animeTriangleRotateZ 3s linear .5s infinite;
+    animation: animeTriangle 3s linear .5s infinite;
 }
 .canvas6 {
-    animation: animeTriangleRotateZ 3s linear .6s infinite;
+    animation: animeTriangle 3s linear .6s infinite;
 }
 .canvas7 {
-    animation: animeTriangleRotateZ 3s linear .7s infinite;
+    animation: animeTriangle 3s linear .7s infinite;
 }
 .canvas8 {
-    animation: animeTriangleRotateZ 3s linear .8s infinite;
+    animation: animeTriangle 3s linear .8s infinite;
 }
 .canvas9 {
-    animation: animeTriangleRotateZ 3s linear .9s infinite;
+    animation: animeTriangle 3s linear .9s infinite;
 }
 
 @keyframes animeTriangleRotateY {
@@ -51,25 +51,20 @@ canvas {
         transform: translateX(-50%) translateY(-50%) rotateY(360deg);
     }
 }
-@keyframes animeTriangleRotateZ {
+@keyframes animeTriangle{
     0% {
-    transform-origin: 50% 8%;
-    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(0)
+    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(0);
     }
     25% {
-    transform-origin: 50% 8%;
-    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(53deg)
+    transform: translateX(-50%) translateY(-50%) rotateY(90deg) rotateZ(53deg);
     }
     50% {
-    transform-origin: 50% 8%;
-    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(0)
+    transform: translateX(-50%) translateY(-50%) rotateY(180deg) rotateZ(0);
     }
     75%{
-    transform-origin: 50% 8%;
-    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(-53deg)
+    transform: translateX(-50%) translateY(-50%) rotateY(270deg) rotateZ(-53deg);
     }
     100%{
-    transform-origin: 50% 8%;
-    transform: translateX(-50%) translateY(-50%) rotateY(0deg) rotateZ(0)
+    transform: translateX(-50%) translateY(-50%) rotateY(360deg) rotateZ(0);
     }
 }
