@@ -9,7 +9,7 @@ console.log(canvases)
 console.log(ctxes)
 const W = canvases[0].clientWidth
 const H = canvases[0].clientHeight
-const size_triangle = 60
+const size_triangle = W/2 - 10
 
 window.onload = function init() {
     ctxes.forEach(ctx => {
@@ -22,7 +22,7 @@ window.onload = function init() {
         ctx.lineTo(W/2, H/2-size_triangle)
         ctx.stroke()
 
-        
+
     })
 
     setInterval(() => {
